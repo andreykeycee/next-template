@@ -1,0 +1,17 @@
+#import "@/graph/auth/auth_payload.graphql"
+
+mutation register (
+  $email: String!
+  $name: String
+  $password: String!
+) {
+  register (
+    request: {
+      email: $email
+      name: $name
+      password: $password
+    }
+  ) {
+    ...auth_payload
+  }
+}
